@@ -1,0 +1,27 @@
+/* Copyright 2021 <Draghici Maria> */
+
+	Am creat un hastable pentru fiecare server, un vector
+pentru hashring, sortat dupa hash-uri si un vector pentru
+servere.
+
+	Pentru adaugarea serverelor am folosit un vector 
+temporar de etichete pentru a le ordona crescator.
+Fiecare eticheta am adaugat-o in hashring si fiecare
+server in vectorul de servere. Am tratat cazul
+de redistribuire a obiectelor prin parcurgerea
+obiectelor din serverul vecin celui adaugat
+si am implementat o functie care sa caute unde 
+ar fi redistribuite obiectele pentru a verifica daca
+obiectul respectiv se muta din serverul curent sau ramane.
+In cazul mutarii, am adaugat obiectul in severul
+potrivit si l-am sters din celalalt. In caz contrar,
+nu se intampla nimic.
+
+	Pentru stergere, am iterat prin obiectele
+serverului sters si le-am adaugat in celelalte servere.
+Am sters etichetele serverului din hashring pentru
+a nu fi luate in considerare la redistribuire.
+De asemenea, am sters serverul din vecorul de sevrere.
+
+	Hashtable-urile, hashring-ul si vectorul de servere
+se redimensioneaza dupa necesitate.
